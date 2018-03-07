@@ -3,6 +3,23 @@
 This backend version of the Spring Petclinic application only provides a REST API. **There is no UI**.
 The [spring-petclinic-angular project](https://github.com/spring-petclinic/spring-petclinic-angular) is a Angular 5 front-end application witch consumes the REST API.
 
+## Integrate with aws-serverless-java-container
+By using the aws-serverless-java-container wrapper library, you can easily intercept all the incoming web traffic in to API Gateway.
+And the best practice is bind a lambda function with proxy integration mode onto API Gateway. 
+
+All the incoming traffic will first be received by APIG and then delegate to your legacy spring controller.
+
+### Integration Steps 
+
+1. Add Maven dependency
+2. Add StreamLambdaHandler
+3. Run all unit test
+4. Write a SAM file to do the deployment
+5. Migrate the front-end web site to s3-static web hosting site
+6. Run full integration test
+
+
+
 ## Understanding the Spring Petclinic application with a few diagrams
 <a href="https://speakerdeck.com/michaelisvy/spring-petclinic-sample-application">See the presentation here</a>
 
