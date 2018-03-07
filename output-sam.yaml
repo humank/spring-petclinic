@@ -1,0 +1,27 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Description: Example Pet Store API written with SpringBoot with the aws-serverless-java-container
+  library
+Outputs:
+  SpringBootPetStoreApi:
+    Description: URL for application
+    Export:
+      Name: SpringBootPetClinicApi
+    Value:
+      Fn::Sub: https://${ServerlessRestApi}.execute-api.${AWS::Region}.amazonaws.com/Prod
+Resources:
+  PetStoreFunction:
+    Properties:
+      CodeUri: s3://lambda-jar-upload/63ebe58953ddd46959931a0878215192
+      Events:
+        GetResource:
+          Properties:
+            Method: any
+            Path: /{proxy+}
+          Type: Api
+      Handler: org.springframework.samples.petclinic.WebLambdaHandler::handleRequest
+      MemorySize: 1512
+      Policies: AWSLambdaBasicExecutionRole
+      Runtime: java8
+      Timeout: 60
+    Type: AWS::Serverless::Function
+Transform: AWS::Serverless-2016-10-31

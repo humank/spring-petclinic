@@ -7,7 +7,7 @@ Resources:
     Properties:
       Handler: org.springframework.samples.petclinic.WebLambdaHandler::handleRequest
       Runtime: java8
-      CodeUri: target/spring-petclinic-1.5.2-shaded.jar
+      CodeUri: target/spring-petclinic-1.5.2.jar
       MemorySize: 1512
       Policies: AWSLambdaBasicExecutionRole
       Timeout: 60
@@ -21,6 +21,6 @@ Resources:
 Outputs:
   SpringBootPetStoreApi:
     Description: URL for application
-    Value: !Sub 'https://${ServerlessRestApi}.execute-api.${AWS::Region}.amazonaws.com/'
+    Value: !Sub 'https://${ServerlessRestApi}.execute-api.${AWS::Region}.amazonaws.com/Prod'
     Export:
-      Name: SpringBootPetStoreApi
+      Name: SpringBootPetClinicApi
