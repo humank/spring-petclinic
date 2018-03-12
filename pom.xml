@@ -39,6 +39,12 @@
 
 	<dependencies>
         <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-context-indexer</artifactId>
+            <version>5.0.4.RELEASE</version>
+            <optional>true</optional>
+        </dependency>
+        <dependency>
             <groupId>com.amazonaws.serverless</groupId>
             <artifactId>aws-serverless-java-container-spring</artifactId>
             <version>[0.8,)</version>
