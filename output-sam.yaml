@@ -11,7 +11,7 @@ Outputs:
 Resources:
   PetStoreFunction:
     Properties:
-      CodeUri: s3://lambda-jar-upload/36fefc25fbdc6b89b608e5cf7c98793d
+      CodeUri: s3://lambda-jar-upload/210211260c6be688a21491b2d0d62abb
       Events:
         GetResource:
           Properties:

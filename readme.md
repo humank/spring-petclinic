@@ -22,7 +22,8 @@ aws cloudformation package --template-file sam.yaml --output-template-file outpu
 
 aws cloudformation deploy --template-file output-sam.yaml --stack-name spring-petclinic --capabilities CAPABILITY_IAM 
 
-aws cloudformation describe-stacks --stack-name spring-petclinic
+aws cloudformation describe-stacks --stack-name spring-petclinic | jq '.Stacks[0].Outputs[0].OutputValue'
+
 
 5. Migrate the front-end web site to s3-static web hosting site
 6. Run full integration test
