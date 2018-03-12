@@ -11,7 +11,7 @@ Outputs:
 Resources:
   PetStoreFunction:
     Properties:
-      CodeUri: s3://lambda-jar-upload/0253cfdd3fdf8a98a2abb71f193c5208
+      CodeUri: s3://lambda-jar-upload/f54f12d698cf226ac552ee912b008625
       Events:
         GetResource:
           Properties:
@@ -20,7 +20,7 @@ Resources:
           Type: Api
       Handler: org.springframework.samples.petclinic.WebLambdaHandler::handleRequest
       MemorySize: 1512
-      Policies: AWSLambdaBasicExecutionRole
+      Policies: AWSLambdaFullAccess
       Runtime: java8
       Timeout: 60
     Type: AWS::Serverless::Function

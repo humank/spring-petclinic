@@ -21,6 +21,7 @@ import java.util.Collection;
 import javax.transaction.Transactional;
 import javax.validation.Valid;
 
+import com.amazonaws.xray.spring.aop.XRayEnabled;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
@@ -42,6 +43,7 @@ import org.springframework.web.util.UriComponentsBuilder;
  *
  */
 
+@XRayEnabled
 @RestController
 @CrossOrigin(exposedHeaders = "errors, content-type")
 @RequestMapping("/api/owners")
