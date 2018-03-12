@@ -17,6 +17,13 @@ All the incoming traffic will first be received by APIG and then delegate to you
 2. Add StreamLambdaHandler
 3. Run all unit test
 4. Write a SAM file to do the deployment
+
+aws cloudformation package --template-file sam.yaml --output-template-file output-sam.yaml --s3-bucket lambda-jar-upload
+
+aws cloudformation deploy --template-file output-sam.yaml --stack-name spring-petclinic --capabilities CAPABILITY_IAM 
+
+aws cloudformation describe-stacks --stack-name spring-petclinic
+
 5. Migrate the front-end web site to s3-static web hosting site
 6. Run full integration test
 

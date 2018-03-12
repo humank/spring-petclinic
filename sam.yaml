@@ -9,7 +9,7 @@ Resources:
       Runtime: java8
       CodeUri: target/spring-petclinic-1.5.2.jar
       MemorySize: 1512
-      Policies: AWSLambdaBasicExecutionRole
+      Policies: AWSLambdaFullAccess
       Timeout: 60
       Events:
         GetResource:
