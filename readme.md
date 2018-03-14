@@ -49,9 +49,6 @@ You can then access petclinic here: http://localhost:9966/petclinic/
 
 <img width="1427" alt="spring-petclinic-angular2" src="https://cloud.githubusercontent.com/assets/838318/23263243/f4509c4a-f9dd-11e6-951b-69d0ef72d8bd.png">
 
-## In case you find a bug/suggested improvement for Spring Petclinic
-Our issue tracker is available here: https://github.com/spring-petclinic/spring-petclinic-rest/issues
-
 
 ## Database configuration
 
@@ -59,50 +56,3 @@ In its default configuration, Petclinic uses an in-memory database (HSQLDB) whic
 gets populated at startup with data.
 A similar setups is provided for MySql and PostgreSQL in case a persistent database configuration is needed.
 To run petclinic locally using persistent database, it is needed to change profile defined in application.properties file.
-
-For MySQL database, it is needed to change param "hsqldb" to "mysql" in string
-```
-spring.profiles.active=hsqldb,spring-data-jpa
-```
- defined in application.properties file.
-
-Before do this, would be good to check properties defined in application-mysql.properties file.
-
-```
-spring.datasource.url = jdbc:mysql://localhost:3306/petclinic?useUnicode=true
-spring.datasource.username=pc
-spring.datasource.password=petclinic 
-spring.datasource.driver-class-name=com.mysql.jdbc.Driver 
-spring.jpa.database=MYSQL
-spring.jpa.database-platform=org.hibernate.dialect.MySQLDialect
-spring.jpa.hibernate.ddl-auto=none
-```      
-
-You may also start a MySql database with docker:
-
-```
-docker run --name mysql-petclinic -e MYSQL_ROOT_PASSWORD=petclinic -e MYSQL_DATABASE=petclinic -p 3306:3306 mysql:5.7.8
-```
-
-For PostgeSQL database, it is needed to change param "hsqldb" to "postgresql" in string
-```
-spring.profiles.active=hsqldb,spring-data-jpa
-```
- defined in application.properties file.
-
-Before do this, would be good to check properties defined in application-postgresql.properties file.
-
-```
-spring.datasource.url=jdbc:postgresql://localhost:5432/petclinic
-spring.datasource.username=postgres
-spring.datasource.password=petclinic
-spring.datasource.driver-class-name=org.postgresql.Driver
-spring.jpa.database=POSTGRESQL
-spring.jpa.database-platform=org.hibernate.dialect.PostgreSQLDialect
-spring.jpa.hibernate.ddl-auto=none
-```
-You may also start a Postgres database with docker:
-
-```
-docker run --name postgres-petclinic -e POSTGRES_PASSWORD=petclinic -e POSTGRES_DB=petclinic -p 5432:5432 -d postgres:9.6.0
-```
