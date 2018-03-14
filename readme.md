@@ -33,19 +33,11 @@ aws cloudformation describe-stacks --stack-name spring-petclinic | jq '.Stacks[0
 ## Understanding the Spring Petclinic application with a few diagrams
 <a href="https://speakerdeck.com/michaelisvy/spring-petclinic-sample-application">See the presentation here</a>
 
-## Running petclinic locally
-```
-	git clone https://github.com/spring-petclinic/spring-petclinic-rest.git
-	cd spring-petclinic
-	./mvnw spring-boot:run
-```
-
-You can then access petclinic here: http://localhost:9966/petclinic/
-
-## Swagger REST API documentation presented here (after application start):
-<a href="http://localhost:9966/petclinic/swagger-ui.html">http://localhost:9966/petclinic/swagger-ui.html</a>
 
 ## Screenshot of the Angular 5 client
+
+The application is backed to serve spring-petclinic-angular5 client, so if you want to have a integrated ui experiense, then you would like to clone it and run it.
+Partially modify the service api path to the integrated API Gateway.
 
 <img width="1427" alt="spring-petclinic-angular2" src="https://cloud.githubusercontent.com/assets/838318/23263243/f4509c4a-f9dd-11e6-951b-69d0ef72d8bd.png">
 
